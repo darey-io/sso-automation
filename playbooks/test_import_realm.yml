@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  gather_facts: false
+
+  vars:
+    # list of dicts where each dict holds data about one target KC
+    kc:
+      url: https://172.17.0.2:8443/
+      username: admin
+      password: admin
+  environment:
+    KEYCLOAK_API_CA_BUNDLE: ""
+  tasks:
+    - name: Import one realm
+      mynamespace.rhsso_automation_capabilities.import_realm:
+        datadir: ../tests/data/kcfetcher-0.0.6
+        realm: ci0-realm
+        # TODO server_instance could be read from environ
+        server_instance: "{{ kc }}"

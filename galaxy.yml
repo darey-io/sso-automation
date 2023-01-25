@@ -1,0 +1,26 @@
+---
+namespace: mynamespace
+name: rhsso_automation_capabilities
+
+version: 0.0.1
+
+readme: README.md
+authors:
+  - Dare <dare@examle.com>
+description: Manage RedHat SSO
+# license: [proprierty]
+tags:
+  - RedHat SSO
+  - Keycloak
+
+dependencies: {}
+#  "community.general": "==5.6.0"
+
+repository: https://github.com/darey-io/rhsso-automation-capabilities.git
+# documentation:
+# homepage:
+# issues:
+build_ignore:
+  - .idea
+  - .venv*
+  - collection_root
