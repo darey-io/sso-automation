@@ -1,5 +1,6 @@
 kc: 
   url: https://sso-dre002ng-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
+  # TODO: use password state to pull the secrets
   username: admin
   password: admin
 

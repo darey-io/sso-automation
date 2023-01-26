@@ -61,13 +61,25 @@ docker run -it -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloa
     ansible-galaxy collection install mynamespace-rhsso_automation_capabilities-0.0.1.tar.gz
     ```
 
+# Set Ansible variables
+In the `group_vars/all/vars.yml` folder you can overide default values from the `roles/rhsso-data-sync/defaults/main.yml` file
+
+```
+kc: 
+  url: https://sso-dre002ng-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
+  # TODO: use password state to pull the secrets
+  username: admin
+  password: admin
+
+fetcher_version: 0.0.8
+realm_name: ci0-realm
+```
+
 # Run Ansible
 
 ```shell
-ansible-playbook main.yml
+ansible-playbook main.yaml
 
-This will create a realm named "ci0-realm" at https://172.17.0.2:8443.
+This will create a realm at the specified destination RHSSO server
 
-You can now modify some realm settings at https://172.17.0.2:8443.
-Changes can be saved to local disk using `kcfetcher`.
 ```
