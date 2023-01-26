@@ -1,0 +1,5 @@
+---
+# tasks file for rhsso-data-sync
+
+- name: Synchronise the RHSSO data
+  include: import_realm.yml

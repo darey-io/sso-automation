@@ -1,0 +1,11 @@
+---
+
+- name: Full path to data source
+  set_fact:
+    src_dp: "{{ playbook_dir }}/keycloak-fetch-bot/output/keycloak/{{ realm_name }}/" # Path to the Realm data on disk. We may need to point this to another Bitbucket repository
+
+- name: Import one realm
+  mynamespace.rhsso_automation_capabilities.import_realm:
+    datadir: "tests/data/kcfetcher-{{ fetcher_version }}"
+    realm: "{{ realm_name }}"
+    server_instance: "{{ kc }}"

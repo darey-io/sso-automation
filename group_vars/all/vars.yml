@@ -1,0 +1,7 @@
+kc: 
+  url: https://sso-dre002ng-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
+  username: admin
+  password: admin
+
+fetcher_version: 0.0.8
+realm_name: ci0-realm

@@ -1,0 +1,46 @@
+- hosts: localhost
+  gather_facts: false
+
+  vars:
+    # list of dicts where each dict holds data about one target KC
+    kc: 
+      url: https://sso-dre002ng-dev.apps.sandbox-m3.1530.p1.openshiftapps.com
+      user: admin
+      pass: admin
+
+  tasks:
+    - name: Full path to data source
+      set_fact:
+        src_dp: "{{ playbook_dir }}/keycloak-fetch-bot/output/keycloak/ci0-realm/" # Path to the Realm data on disk
+        # src_dp: /Users/dare/Downloads/aws-project-darey/sso/keycloak-fetch-bot/output/keycloak/ci0-realm/
+
+    - name: Import one realm
+      mynamespace.rhsso_automation_capabilities.import_realm:
+        datadir: ../tests/data/kcfetcher-0.0.8
+        realm: ci0-realm
+        # TODO server_instance could be read from environ
+        server_instance: "{{ kc }}"
+
+
+
+
+
+    # - name: Import objects
+    #   keycloak_importer: 
+    #     user: "{{ kc['user'] }}"
+    #     password: "{{ kc['pass'] }}"
+    #     source_data_path: "{{ src_dp }}"
+    #     target_realm: ci0-realm
+    #     target_kc: "{{ kc['url'] }}"
+    #     import:
+    #       - clients
+    #       - roles
+    #       - groups
+    #       - users
+    #       - components
+    #       - identity-providers
+    #   register: kc_import_objects
+
+    # - name: Print kc_import_objects
+    #   debug:
+    #     msg: "{{ kc_import_objects }}"

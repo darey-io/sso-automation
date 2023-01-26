@@ -1,0 +1,31 @@
+{
+ "collection_info": {
+  "namespace": "mynamespace",
+  "name": "rhsso_automation_capabilities",
+  "version": "0.0.1",
+  "authors": [
+   "Dare <dare@examle.com>"
+  ],
+  "readme": "README.md",
+  "tags": [
+   "RedHat SSO",
+   "Keycloak"
+  ],
+  "description": "Manage RedHat SSO",
+  "license": [],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "https://github.com/darey-io/rhsso-automation-capabilities.git",
+  "documentation": null,
+  "homepage": null,
+  "issues": null
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "7595d2af989e544d181dcf88fbe2c7ddefd828b7993b9f2f34f40da36f26260a",
+  "format": 1
+ },
+ "format": 1
+}

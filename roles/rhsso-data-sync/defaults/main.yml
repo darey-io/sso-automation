@@ -1,0 +1,8 @@
+---
+kc: 
+  url: https://172.17.0.2:8443
+  username: admin
+  password: admin
+
+fetcher_version: 0.0.8
+realm_name: ci0-realm

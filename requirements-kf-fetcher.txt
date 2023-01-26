@@ -1,0 +1,3 @@
+# keycloak-fetch-bot is not needed for this collection,
+# But if you need to run kcfetcher command, use this version.
+keycloak-fetch-bot==0.0.6
